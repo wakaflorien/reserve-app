@@ -43,8 +43,8 @@ export const Header = () => {
             <div className="flex flex-row justify-between px-20 items-center h-[10vh]">
                 <Link href="/">
                     <Image
-                        src="/vercel.svg"
-                        alt="Vercel Logo"
+                        src="/logo.svg"
+                        alt="UNQUR Logo"
                         className=""
                         width={100}
                         height={24}
@@ -63,7 +63,7 @@ export const Header = () => {
                         </div>
                     }>
                         <Link href="/authentication">
-                            <Icon icon="basil:user-outline"/>
+                            <Icon icon="basil:user-outline" color="#766957"/>
                         </Link>
                     </Tooltip>
                     <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl" content={
@@ -71,14 +71,14 @@ export const Header = () => {
                             <p className="font-normal text-primary">Favorites</p>
                         </div>
                     }>
-                        <Icon icon="tdesign:heart"/>
+                        <Icon icon="tdesign:heart" color="#766957"/>
                     </Tooltip>
                     <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl" content={
                         <div className="w-fit">
                             <p className="font-normal text-primary">View cart</p>
                         </div>
                     }>
-                        <Icon icon="mdi:cart-outline"/>
+                        <Icon icon="mdi:cart-outline" color="#766957"/>
                     </Tooltip>
                 </div>
             </div>
@@ -86,7 +86,8 @@ export const Header = () => {
                 <Link href="/">
                     <Button
                         variant="text"
-                        className="flex items-center gap-3 text-base font-normal capitalize tracking-normal rounded-none">
+                        color='white'
+                        className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none h-full">
                         Home
                     </Button>
                 </Link>
@@ -94,9 +95,10 @@ export const Header = () => {
                     <MenuHandler>
                         <Button
                             variant="text"
-                            className="flex items-center gap-3 text-base font-normal capitalize tracking-normal rounded-none"
+                            color='white'
+                            className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none"
                         >
-                            Rent Look{" "}
+                            Rent furniture & decor{" "}
                             <ChevronDownIcon
                                 strokeWidth={2.5}
                                 className={`h-3.5 w-3.5 transition-transform ${
@@ -117,14 +119,13 @@ export const Header = () => {
                         <ul className="col-span-4 flex w-full flex-col gap-1">
                             {menuItems.map(({title, description}) => (
                                 <a href="#" key={title}>
-                                    <MenuItem>
-                                        <Typography variant="h6" color="blue-gray" className="mb-1">
+                                    <MenuItem className="hover:bg-transparent hover:scale-105">
+                                        <Typography variant="h6" className="mb-1 text-primary">
                                             {title}
                                         </Typography>
                                         <Typography
                                             variant="small"
-                                            color="gray"
-                                            className="font-normal"
+                                            className="font-normal hover:text-secondary"
                                         >
                                             {description}
                                         </Typography>
@@ -136,13 +137,15 @@ export const Header = () => {
                 </Menu>
                 <Button
                     variant="text"
-                    className="flex items-center gap-3 text-base font-normal capitalize tracking-normal rounded-none">
-                    Inspirations
+                    color='white'
+                    className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none">
+                    Rent catering
                 </Button>
                 <Button
                     variant="text"
-                    className="flex items-center gap-3 text-base font-normal capitalize tracking-normal rounded-none">
-                    Inspirations
+                    color='white'
+                    className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none">
+                    Rent a look
                 </Button>
 
             </nav>

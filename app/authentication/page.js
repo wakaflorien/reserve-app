@@ -22,7 +22,7 @@ const data = [
     {
         label: "Signup",
         value: "signup",
-        icon:UserPlusIcon,
+        icon: UserPlusIcon,
     },
     {
         label: "Login",
@@ -36,10 +36,10 @@ export default function Login() {
         <main className="main">
             <Header/>
             <Tabs value={defaultTab}>
-                <TabsHeader>
+                <TabsHeader className="bg-secondary">
                     {data.map(({label, value, icon}) => (
                         <Tab key={value} value={value}>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 text-primary">
                                 {createElement(icon, {className: "w-5 h-5"})}
                                 {label}
                             </div>
@@ -97,7 +97,7 @@ export default function Login() {
                                 Login
                             </Typography>
                             <Typography color="gray" className="mt-1 font-normal">
-                                Enter your credentials to login.
+                                Enter your credentials to continue.
                             </Typography>
                             <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                                 <div className="mb-4 flex flex-col gap-6">
@@ -114,6 +114,18 @@ export default function Login() {
                                         Sign Up
                                     </a>
                                 </Typography>
+                                <Typography className="mt-4 text-center font-medium text-black">
+                                    OR
+                                </Typography>
+                                <Typography className="mt-4 text-center font-normal text-black">
+                                    Order without an account
+                                </Typography>
+
+                                <Button variant="outlined"
+                                        className="mt-6 normal-case text-primary border border-primary" ripple={false}
+                                        fullWidth>
+                                    Guest checkout
+                                </Button>
                             </form>
                         </Card>
                     </TabPanel>

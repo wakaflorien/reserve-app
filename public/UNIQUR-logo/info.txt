@@ -1,0 +1,11 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: SourceSerifPro-Regular
+font link: https://fonts.google.com/specimen/Source+Serif+Pro
+font author: Frank Grießhammer
+font author site: http://www.frgr.de/
+
+
+{"bg":"#E3CFB5","icon":"#776957","font":"#ffffff","slogan":"#ffffff"}
+      
