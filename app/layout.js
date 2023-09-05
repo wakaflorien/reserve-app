@@ -1,4 +1,5 @@
 import './globals.css'
+import Script from "next/script";
 import {Inter} from 'next/font/google'
 import {ThemeProvider} from "../utils/material_tailwind";
 
@@ -13,6 +14,19 @@ export default function RootLayout({children}) {
     return (
         <ThemeProvider>
             <html lang="en">
+            <head>
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-7E7ZSVTLXY"/>
+                <Script id="google-analytics">
+                    {`
+                     window.dataLayer = window.dataLayer || [];
+                    function gtag(){window.dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-7E7ZSVTLXY', {' send_page_view': true });
+                    `}
+                </Script>
+                <title>Reserve App</title>
+            </head>
             <body className={inter.className}>{children}</body>
             </html>
         </ThemeProvider>
