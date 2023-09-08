@@ -50,43 +50,42 @@ export default function SingleProduct() {
                             <Typography variant="lead" className="text-xs">Tax included.</Typography>
                             <Typography variant="lead" className="text-lg">Duration.</Typography>
 
-                            <div className="flex w-max gap-4 normal-case">
-                                <Button variant="filled" className="rounded-full">1 Day</Button>
-                                <Button variant="outlined" className="rounded-full">3 Days</Button>
-                                <Button variant="outlined" className="rounded-full">1 Week</Button>
-                                <Button variant="outlined" className="rounded-full">1 Month</Button>
-                                <Button variant="outlined" className="rounded-full">1 Year</Button>
-                            </div>
-                            <div className="flex w-1/2 h-10 items-center">
-                                <input type="datetime-local" placeholder="Reserve your day" className="border p-1"/>
-                            </div>
-                            <Button variant="outlined" className="w-1/2 rounded-none normal-case">Book Now</Button>
-                            <div className="space-y-4 divide-y">
-                                <details>
-                                    <summary>Materials</summary>
-                                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-                                        international pavilions, award-winning fireworks and seasonal special
-                                        events.</p>
-                                </details>
-                                <details>
-                                    <summary>Shipping returns</summary>
-                                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-                                        international pavilions, award-winning fireworks and seasonal special
-                                        events.</p>
-                                </details>
-                                <details>
-                                    <summary>Dimensions</summary>
-                                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-                                        international pavilions, award-winning fireworks and seasonal special
-                                        events.</p>
-                                </details>
-                                <details>
-                                    <summary>Care instructions</summary>
-                                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-                                        international pavilions, award-winning fireworks and seasonal special
-                                        events.</p>
-                                </details>
-
+                            <div className="space-y-4">
+                                <div className="flex w-max gap-4 normal-case">
+                                    <Button variant="filled" className="rounded-full">1 Day</Button>
+                                    <Button variant="outlined" className="rounded-full">3 Days</Button>
+                                    <Button variant="outlined" className="rounded-full">1 Week</Button>
+                                    <Button variant="outlined" className="rounded-full">1 Month</Button>
+                                    <Button variant="outlined" className="rounded-full">1 Year</Button>
+                                </div>
+                                <div className="flex w-1/2 h-10 items-center">
+                                    <input type="datetime-local" placeholder="Reserve your day" className="border p-1"/>
+                                </div>
+                                <Button variant="outlined" className="w-1/2 rounded-none normal-case">Book Now</Button>
+                                <div className="space-y-4 divide-y">
+                                    <details>
+                                        <summary>Materials</summary>
+                                        <p>Epcot.</p>
+                                    </details>
+                                    <details>
+                                        <summary>Shipping returns</summary>
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                            international pavilions, award-winning fireworks and seasonal special
+                                            events.</p>
+                                    </details>
+                                    <details>
+                                        <summary>Dimensions</summary>
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                            international pavilions, award-winning fireworks and seasonal special
+                                            events.</p>
+                                    </details>
+                                    <details>
+                                        <summary>Care instructions</summary>
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                            international pavilions, award-winning fireworks and seasonal special
+                                            events.</p>
+                                    </details>
+                                </div>
                             </div>
                         </div>
                     </figure>
