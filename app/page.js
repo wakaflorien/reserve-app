@@ -29,7 +29,7 @@ export default function Home() {
                         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
                             <div className="w-full text-center md:w-2/4 space-y-8">
                                 <p className="text-white text-xl">
-                                    Welcome to Jane Doe&apos;s! We&apos;re your partners in making small gatherings
+                                    Welcome to UNIQUR! We&apos;re your partners in making small gatherings
                                     extraordinary. From delightful birthdays to heartwarming family get-togethers,
                                     charming
                                     bridal showers, and adorable baby showers, we specialize in crafting unforgettable

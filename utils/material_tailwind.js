@@ -43,5 +43,5 @@ export {
     TabPanel,
     CardHeader,
     CardBody,
-    CardFooter
+    CardFooter,
 };

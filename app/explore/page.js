@@ -42,7 +42,7 @@ export default function Explore() {
                             <img
                                 src={item.images[2]}
                                 alt="card-image"
-                                className="h-52 w-full object-cover"
+                                className="h-52 w-full object-cover border-b"
                             />
                             <CardBody>
                                 <Typography variant="h5" color="blue-gray" className="mb-2">
