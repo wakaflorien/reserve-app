@@ -9,11 +9,14 @@ import {
     MenuItem,
     MenuList,
     Tooltip,
-    Typography
+    Typography,
+    IconButton,
+    Collapse,
+    Navbar
 } from "@/utils/material_tailwind";
 import {Icon} from "@iconify/react";
 import {ChevronDownIcon, RocketLaunchIcon} from "@heroicons/react/24/outline";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
 
 const menuItems = [
@@ -38,51 +41,133 @@ export const Header = () => {
     const handleSearch = () => {
         console.log("Search value")
     }
+    const [openNav, setOpenNav] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            window.innerWidth >= 960 && setOpenNav(false);
+        });
+    }, []);
+
+    const navList = (
+        <ul className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-6">
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-normal text-md text-primary"
+            >
+                <Link href="/">Home</Link>
+            </Typography>
+            <Typography
+                variant="small"
+                className="p-1 font-normal text-md text-primary">
+                <Link href="/"> Rent furniture & decor</Link>
+            </Typography>
+            <Typography
+                variant="small"
+                className="p-1 font-normal text-md text-primary">
+                <Link href="/"> Rent catering</Link>
+            </Typography>
+            <Typography
+                variant="small"
+                className="p-1 font-normal text-md text-primary">
+                <Link href="/"> Rent a look</Link>
+            </Typography>
+        </ul>
+    );
+
     return (
-        <div className="z-10">
-            <div className="flex flex-row justify-between px-20 items-center h-[10vh]">
-                <Link href="/">
-                    <Image
-                        src="/logo.svg"
-                        alt="UNQUR Logo"
-                        className=""
-                        width={100}
-                        height={24}
-                        priority
-                    />
-                </Link>
-                <div className="w-3/4">
-                    <Input label="What are you looking for?"
-                           icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
-                           onClick={(event) => handleSearch(event)}/>
-                </div>
-                <div className="flex flex-row space-x-4 items-center cursor-pointer">
-                    <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl" content={
-                        <div className="w-fit">
-                            <p className="font-normal text-primary">Login</p>
-                        </div>
-                    }>
-                        <Link href="/authentication">
-                            <Icon icon="basil:user-outline" color="#766957"/>
-                        </Link>
-                    </Tooltip>
-                    <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl" content={
-                        <div className="w-fit">
-                            <p className="font-normal text-primary">Favorites</p>
-                        </div>
-                    }>
-                        <Icon icon="tdesign:heart" color="#766957"/>
-                    </Tooltip>
-                    <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl" content={
-                        <div className="w-fit">
-                            <p className="font-normal text-primary">View cart</p>
-                        </div>
-                    }>
-                        <Icon icon="mdi:cart-outline" color="#766957"/>
-                    </Tooltip>
+        <Navbar
+            variant="filled"
+            shadow={false}
+            color="black"
+            fullWidth={true}
+            // blurred={true}
+            className="mx-auto h-fit lg:flex-1 w-full max-w-screen-3xl rounded-none py-2 px-4 lg:px-0 lg:py-0 sticky top-0 z-40">
+            <div className="mx-auto flex items-center justify-between text-blue-gray-900 lg:px-20 lg:py-4 ">
+                <Image
+                    src="/logo.svg"
+                    alt="UNQUR Logo"
+                    className=""
+                    width={100}
+                    height={24}
+                    priority
+                />
+                <div className="flex flex-row gap-4 lg:w-2/3">
+                    <div className="w-full hidden lg:inline">
+                        <Input label="What are you looking for?"
+                               icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
+                               onClick={(event) => handleSearch(event)}/>
+                    </div>
+                    <div className="flex flex-row space-x-4 items-center cursor-pointer">
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">Login</p>
+                                     </div>
+                                 }>
+                            <Link href="/authentication">
+                                <Icon icon="basil:user-outline" color="#766957"/>
+                            </Link>
+                        </Tooltip>
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">Favorites</p>
+                                     </div>
+                                 }>
+                            <Icon icon="tdesign:heart" color="#766957"/>
+                        </Tooltip>
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">View cart</p>
+                                     </div>
+                                 }>
+                            <Icon icon="mdi:cart-outline" color="#766957"/>
+                        </Tooltip>
+                    </div>
+                    <IconButton
+                        variant="text"
+                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+                        ripple={false}
+                        onClick={() => setOpenNav(!openNav)}
+                    >
+                        {openNav ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                className="h-6 w-6 text-primary"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6 text-primary"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        )}
+                    </IconButton>
                 </div>
             </div>
-            <nav className="flex w-full bg-primary h-[7vh] justify-evenly">
+            <div className="hidden lg:flex w-full justify-evenly bg-primary lg:px-0">
                 <Link href="/">
                     <Button
                         variant="text"
@@ -148,7 +233,15 @@ export const Header = () => {
                     Rent a look
                 </Button>
 
-            </nav>
-        </div>
+            </div>
+            <Collapse open={openNav}>
+                <div className="w-full my-4">
+                    <Input label="What are you looking for?"
+                           icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
+                           onClick={(event) => handleSearch(event)}/>
+                </div>
+                {navList}
+            </Collapse>
+        </Navbar>
     )
 }

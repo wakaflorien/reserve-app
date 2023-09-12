@@ -20,7 +20,10 @@ import {
     TabPanel,
     CardHeader,
     CardBody,
-    CardFooter
+    CardFooter,
+    Collapse,
+    IconButton,
+    Navbar
 } from "@material-tailwind/react";
 
 export {
@@ -44,4 +47,7 @@ export {
     CardHeader,
     CardBody,
     CardFooter,
+    Collapse,
+    IconButton,
+    Navbar
 };

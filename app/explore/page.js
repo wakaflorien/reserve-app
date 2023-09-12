@@ -25,7 +25,7 @@ export default function Explore() {
     return (
         <main className="main">
             <Header/>
-            <header className="flex flex-col items-center justify-center py-4">
+            <header className="flex flex-col items-center justify-center px-2 py-4">
                 <Typography variant="h4" color="blue-gray">
                     Explore All
                 </Typography>
@@ -36,7 +36,7 @@ export default function Explore() {
             </header>
             {loading && <Loading/>}
             {!loading && (<Suspense fallback={<Loading/>}>
-                <figure className="px-20 pb-20 grid grid-cols-3">
+                <figure className="px-2 lg:px-20 lg:pb-20  grid lg:grid-cols-3">
                     {products && products.map((item, index) =>
                         <Card key={index} className="mt-6 w-80 rounded-none shadow-none border">
                             <img

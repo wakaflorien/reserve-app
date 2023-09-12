@@ -10,7 +10,7 @@ export const LoadingSkeleton = () => {
     }, []);
     return (
         <>
-            {loading && <figure className="px-20 grid grid-cols-3 animate-pulse">
+            {loading && <figure className="px-2 lg:px-20 grid lg:grid-cols-3 animate-pulse">
                 <div className="mt-6 w-80 space-y-4">
                     <div color="blue-gray" className="relative bg-gray-400 h-40 rounded-md" />
                     <div className="w-40 h-4 bg-gray-400 rounded-full animate-pulse" />

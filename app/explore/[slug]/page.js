@@ -35,23 +35,20 @@ export default function SingleProduct() {
             {loading && <Loading/>}
             {!loading && (
                 <Suspense fallback={<Loading/>}>
-                    <figure className="px-20 my-10 h-[65vh] w-full grid grid-cols-2 space-x-8">
-                        {/*{console.log("props", product)}*/}
-                        <div className="">
-                            <img
-                                src={product && product.images[2]}
-                                alt="image 2"
-                                className="h-full w-full object-cover border"
-                            />
-                        </div>
-                        <div className="space-y-2">
+                    <figure className="flex-1 px-2 lg:px-20 lg:my-10 h-full w-full grid lg:grid-cols-2 lg:space-x-8">
+                        <img
+                            src={product && product.images[2]}
+                            alt="image 2"
+                            className="h-full w-full object-cover border"
+                        />
+                        <div className="my-2 space-y-2">
                             <Typography variant="lead" className="text-xl">{product.title}</Typography>
                             <Typography variant="lead" className="text-lg">RWF {product.price}</Typography>
                             <Typography variant="lead" className="text-xs">Tax included.</Typography>
                             <Typography variant="lead" className="text-lg">Duration.</Typography>
 
                             <div className="space-y-4">
-                                <div className="flex w-max gap-4 normal-case">
+                                <div className="flex flex-wrap lg:w-max gap-4 normal-case">
                                     <Button variant="filled" className="rounded-full">1 Day</Button>
                                     <Button variant="outlined" className="rounded-full">3 Days</Button>
                                     <Button variant="outlined" className="rounded-full">1 Week</Button>
@@ -69,19 +66,22 @@ export default function SingleProduct() {
                                     </details>
                                     <details>
                                         <summary>Shipping returns</summary>
-                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting
+                                            attractions,
                                             international pavilions, award-winning fireworks and seasonal special
                                             events.</p>
                                     </details>
                                     <details>
                                         <summary>Dimensions</summary>
-                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting
+                                            attractions,
                                             international pavilions, award-winning fireworks and seasonal special
                                             events.</p>
                                     </details>
                                     <details>
                                         <summary>Care instructions</summary>
-                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting
+                                            attractions,
                                             international pavilions, award-winning fireworks and seasonal special
                                             events.</p>
                                     </details>

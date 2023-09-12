@@ -14,21 +14,39 @@ export const ImageLoader = ({src, width, quality}) => {
 export default function Home() {
     return (
         <main className="main">
-            <Header />
-            <figure className="flex h-[83vh]">
-                <Carousel ClassName="rounded-xl">
+            <Header/>
+            <figure className="flex-1 h-full">
+                <Carousel transition={{duration: 2}} className="rounded-none"
+                          autoplay={true}
+                          autoplayDelay={5000}
+                          loop={true}
+                          navigation={({setActiveIndex, activeIndex, length}) => (
+                              <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                                  {new Array(length).fill("").map((_, i) => (
+                                      <span
+                                          key={i}
+                                          className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                                              activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                                          }`}
+                                          onClick={() => setActiveIndex(i)}
+                                      />
+                                  ))}
+                              </div>
+                          )}
+                >
                     <div className="relative h-full w-full">
                         <Image
                             loader={ImageLoader}
                             src="photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
                             alt="image 1"
-                            width={500}
-                            height={500}
-                            className="h-full w-full object-cover"
+                            // width={500}
+                            // height={500}
+                            fill={true}
+                            className="object-cover"
                         />
                         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
                             <div className="w-full text-center md:w-2/4 space-y-8">
-                                <p className="text-white text-xl">
+                                <p className="text-white text-base lg:text-xl px-2">
                                     Welcome to UNIQUR! We&apos;re your partners in making small gatherings
                                     extraordinary. From delightful birthdays to heartwarming family get-togethers,
                                     charming

@@ -4,8 +4,12 @@
 
 @layer components {
   .main {
-    @apply flex min-h-screen flex-col h-screen z-0;
+    @apply flex flex-col h-screen min-h-screen z-0;
   }
+}
+*{
+  margin: 0;
+  padding: 0;
 }
 :root {
   --foreground-rgb: 0, 0, 0;
