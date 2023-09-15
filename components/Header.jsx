@@ -14,9 +14,9 @@ import {
     Collapse,
     Navbar
 } from "@/utils/material_tailwind";
-import {Icon} from "@iconify/react";
-import {ChevronDownIcon, RocketLaunchIcon} from "@heroicons/react/24/outline";
-import {useEffect, useState} from "react";
+import { Icon } from "@iconify/react";
+import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const menuItems = [
@@ -57,7 +57,7 @@ export const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal text-md text-primary"
             >
-                <Link href="/">Home</Link>
+                <Link href="/explore">Home</Link>
             </Typography>
             <Typography
                 variant="small"
@@ -67,70 +67,51 @@ export const Header = () => {
             <Typography
                 variant="small"
                 className="p-1 font-normal text-md text-primary">
-                <Link href="/"> Rent catering</Link>
+                <Link href="/explore"> Rent catering</Link>
             </Typography>
             <Typography
                 variant="small"
                 className="p-1 font-normal text-md text-primary">
-                <Link href="/"> Rent a look</Link>
+                <Link href="/explore"> Rent a look</Link>
             </Typography>
+            <Typography
+                variant="small"
+                className="p-1 font-normal text-md text-primary">
+                <Link href="/explore"> Baloons</Link>
+            </Typography>
+
         </ul>
     );
+
+    const navItems = [
+        {
+            title: "Rent a look",
+            link: "/explore"
+        },
+        {
+            title: "Rent catering",
+            link: "/explore"
+        },
+        {
+            title: "Baloons",
+            link: "/explore"
+        },
+
+    ]
 
     return (
         <Navbar
             variant="filled"
             shadow={false}
             color="black"
-            fullWidth={true}
+            fullWidth={false}
             // blurred={true}
             className="mx-auto h-fit lg:flex-1 w-full max-w-screen-3xl rounded-none py-2 px-4 lg:px-0 lg:py-0 sticky top-0 z-40">
             <div className="mx-auto flex items-center justify-between text-blue-gray-900 lg:px-20 lg:py-4 ">
-                <Image
-                    src="/logo.svg"
-                    alt="UNQUR Logo"
-                    className=""
-                    width={100}
-                    height={24}
-                    priority
-                />
-                <div className="flex flex-row gap-4 lg:w-2/3">
-                    <div className="w-full hidden lg:inline">
-                        <Input label="What are you looking for?"
-                               icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
-                               onClick={(event) => handleSearch(event)}/>
-                    </div>
-                    <div className="flex flex-row space-x-4 items-center cursor-pointer">
-                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                                 content={
-                                     <div className="w-fit">
-                                         <p className="font-normal text-primary">Login</p>
-                                     </div>
-                                 }>
-                            <Link href="/authentication">
-                                <Icon icon="basil:user-outline" color="#766957"/>
-                            </Link>
-                        </Tooltip>
-                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                                 content={
-                                     <div className="w-fit">
-                                         <p className="font-normal text-primary">Favorites</p>
-                                     </div>
-                                 }>
-                            <Icon icon="tdesign:heart" color="#766957"/>
-                        </Tooltip>
-                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                                 content={
-                                     <div className="w-fit">
-                                         <p className="font-normal text-primary">View cart</p>
-                                     </div>
-                                 }>
-                            <Icon icon="mdi:cart-outline" color="#766957"/>
-                        </Tooltip>
-                    </div>
+                <div className="flex space-x-1">
                     <IconButton
                         variant="text"
-                        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+                        className="mr-auto p-4 h-8 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
                         ripple={false}
                         onClick={() => setOpenNav(!openNav)}
                     >
@@ -165,6 +146,51 @@ export const Header = () => {
                             </svg>
                         )}
                     </IconButton>
+                    <Image
+                        src="/logo.svg"
+                        alt="UNQUR Logo"
+                        className="self-end"
+                        width={100}
+                        height={24}
+                        priority
+                    />
+                </div>
+                <div className="flex flex-row gap-4 lg:w-2/3">
+                    <div className="w-full hidden lg:inline">
+                        <Input label="What are you looking for?"
+                            icon={<Icon icon="akar-icons:search" className="cursor-pointer" />}
+                            onClick={(event) => handleSearch(event)} />
+                    </div>
+                    <div className="flex flex-row space-x-4 items-center cursor-pointer">
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                            content={
+                                <div className="w-fit">
+                                    <p className="font-normal text-primary">Login</p>
+                                </div>
+                            }>
+                            <Link href="/authentication">
+                                <Icon icon="basil:user-outline" color="#766957" />
+                            </Link>
+                        </Tooltip>
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                            content={
+                                <div className="w-fit">
+                                    <p className="font-normal text-primary">Favorites</p>
+                                </div>
+                            }>
+                            <Icon icon="tdesign:heart" color="#766957" />
+                        </Tooltip>
+                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
+                            content={
+                                <div className="w-fit">
+                                    <p className="font-normal text-primary">View cart</p>
+                                </div>
+                            }>
+                            <Link href="/cart">
+                                <Icon icon="mdi:cart-outline" color="#766957" />
+                            </Link>
+                        </Tooltip>
+                    </div>
                 </div>
             </div>
             <div className="hidden lg:flex w-full justify-evenly bg-primary lg:px-0">
@@ -186,9 +212,8 @@ export const Header = () => {
                             Rent furniture & decor{" "}
                             <ChevronDownIcon
                                 strokeWidth={2.5}
-                                className={`h-3.5 w-3.5 transition-transform ${
-                                    openMenu ? "rotate-180" : ""
-                                }`}
+                                className={`h-3.5 w-3.5 transition-transform ${openMenu ? "rotate-180" : ""
+                                    }`}
                             />
                         </Button>
                     </MenuHandler>
@@ -199,10 +224,10 @@ export const Header = () => {
                             variant="gradient"
                             className="col-span-3 grid h-full w-full place-items-center rounded-md"
                         >
-                            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28"/>
+                            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
                         </Card>
                         <ul className="col-span-4 flex w-full flex-col gap-1">
-                            {menuItems.map(({title, description}) => (
+                            {menuItems.map(({ title, description }) => (
                                 <a href="#" key={title}>
                                     <MenuItem className="hover:bg-transparent hover:scale-105">
                                         <Typography variant="h6" className="mb-1 text-primary">
@@ -220,25 +245,23 @@ export const Header = () => {
                         </ul>
                     </MenuList>
                 </Menu>
-                <Button
-                    variant="text"
-                    color='white'
-                    className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none">
-                    Rent catering
-                </Button>
-                <Button
-                    variant="text"
-                    color='white'
-                    className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none">
-                    Rent a look
-                </Button>
-
+                {navItems.map((item, index) =>
+                    <Link key={index} href={item.link}>
+                        <Button
+                            key={index}
+                            variant="text"
+                            color='white'
+                            className="flex items-center gap-3 text-base font-normal normal-case tracking-normal rounded-none">
+                            {item.title}
+                        </Button>
+                    </Link>
+                )}
             </div>
             <Collapse open={openNav}>
                 <div className="w-full my-4">
                     <Input label="What are you looking for?"
-                           icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
-                           onClick={(event) => handleSearch(event)}/>
+                        icon={<Icon icon="akar-icons:search" className="cursor-pointer" />}
+                        onClick={(event) => handleSearch(event)} />
                 </div>
                 {navList}
             </Collapse>

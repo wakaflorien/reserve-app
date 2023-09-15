@@ -23,7 +23,10 @@ import {
     CardFooter,
     Collapse,
     IconButton,
-    Navbar
+    Navbar,
+    Spinner,
+    Breadcrumbs,
+    Radio
 } from "@material-tailwind/react";
 
 export {
@@ -49,5 +52,8 @@ export {
     CardFooter,
     Collapse,
     IconButton,
-    Navbar
+    Navbar,
+    Spinner,
+    Breadcrumbs,
+    Radio
 };

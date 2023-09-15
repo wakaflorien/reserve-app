@@ -89,5 +89,6 @@ export default function Home() {
                     </div>
                 </Carousel>
             </figure>
-        </main>)
+        </main>
+        )
 }
