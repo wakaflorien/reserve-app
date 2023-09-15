@@ -15,7 +15,7 @@ import {
     Navbar
 } from "@/utils/material_tailwind";
 import { Icon } from "@iconify/react";
-import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/solid";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -178,7 +178,9 @@ export const Header = () => {
                                     <p className="font-normal text-primary">Favorites</p>
                                 </div>
                             }>
+                                <Link href="/favourite">
                             <Icon icon="tdesign:heart" color="#766957" />
+                            </Link>
                         </Tooltip>
                         <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
                             content={

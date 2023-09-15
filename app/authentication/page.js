@@ -1,5 +1,6 @@
 'use client'
 import {createElement, useState} from "react"
+import {UserPlusIcon, UserCircleIcon} from "@heroicons/react/solid"
 import {Header} from "@/components/Header";
 import {
     Button,
@@ -13,10 +14,7 @@ import {
     TabsHeader,
     Typography
 } from "@/utils/material_tailwind";
-import {
-    UserCircleIcon,
-    UserPlusIcon
-} from "@heroicons/react/24/solid";
+import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/solid";
 
 const data = [
     {
