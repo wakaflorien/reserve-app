@@ -14,28 +14,11 @@ import {
     Collapse,
     Navbar
 } from "@/utils/material_tailwind";
-import { Icon } from "@iconify/react";
-import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/solid";
-import { useEffect, useState } from "react";
+import {Icon} from "@iconify/react";
+import {ChevronDownIcon, RocketLaunchIcon} from "@heroicons/react/solid";
+import {useEffect, useState} from "react";
 import Link from "next/link";
 
-const menuItems = [
-    {
-        title: "Tables",
-        description:
-            "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-    },
-    {
-        title: "Looks",
-        description:
-            "Learn how to use @material-tailwind/react, packed with rich components for React.",
-    },
-    {
-        title: "Chairs",
-        description:
-            "A complete set of UI Elements for building faster websites in less time.",
-    },
-];
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
     const handleSearch = () => {
@@ -48,6 +31,24 @@ export const Header = () => {
             window.innerWidth >= 960 && setOpenNav(false);
         });
     }, []);
+
+    const menuItems = [
+        {
+            title: "Tables",
+            description:
+                "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+        },
+        {
+            title: "Looks",
+            description:
+                "Learn how to use @material-tailwind/react, packed with rich components for React.",
+        },
+        {
+            title: "Chairs",
+            description:
+                "A complete set of UI Elements for building faster websites in less time.",
+        },
+    ];
 
     const navList = (
         <ul className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-6">
@@ -158,38 +159,38 @@ export const Header = () => {
                 <div className="flex flex-row gap-4 lg:w-2/3">
                     <div className="w-full hidden lg:inline">
                         <Input label="What are you looking for?"
-                            icon={<Icon icon="akar-icons:search" className="cursor-pointer" />}
-                            onClick={(event) => handleSearch(event)} />
+                               icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
+                               onClick={(event) => handleSearch(event)}/>
                     </div>
                     <div className="flex flex-row space-x-4 items-center cursor-pointer">
                         <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                            content={
-                                <div className="w-fit">
-                                    <p className="font-normal text-primary">Login</p>
-                                </div>
-                            }>
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">Login</p>
+                                     </div>
+                                 }>
                             <Link href="/authentication">
-                                <Icon icon="basil:user-outline" color="#766957" />
+                                <Icon icon="basil:user-outline" color="#766957"/>
                             </Link>
                         </Tooltip>
                         <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                            content={
-                                <div className="w-fit">
-                                    <p className="font-normal text-primary">Favorites</p>
-                                </div>
-                            }>
-                                <Link href="/favourite">
-                            <Icon icon="tdesign:heart" color="#766957" />
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">Favorites</p>
+                                     </div>
+                                 }>
+                            <Link href="/favourite">
+                                <Icon icon="tdesign:heart" color="#766957"/>
                             </Link>
                         </Tooltip>
                         <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                            content={
-                                <div className="w-fit">
-                                    <p className="font-normal text-primary">View cart</p>
-                                </div>
-                            }>
+                                 content={
+                                     <div className="w-fit">
+                                         <p className="font-normal text-primary">View cart</p>
+                                     </div>
+                                 }>
                             <Link href="/cart">
-                                <Icon icon="mdi:cart-outline" color="#766957" />
+                                <Icon icon="mdi:cart-outline" color="#766957"/>
                             </Link>
                         </Tooltip>
                     </div>
@@ -215,7 +216,7 @@ export const Header = () => {
                             <ChevronDownIcon
                                 strokeWidth={2.5}
                                 className={`h-3.5 w-3.5 transition-transform ${openMenu ? "rotate-180" : ""
-                                    }`}
+                                }`}
                             />
                         </Button>
                     </MenuHandler>
@@ -226,10 +227,10 @@ export const Header = () => {
                             variant="gradient"
                             className="col-span-3 grid h-full w-full place-items-center rounded-md"
                         >
-                            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+                            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28"/>
                         </Card>
                         <ul className="col-span-4 flex w-full flex-col gap-1">
-                            {menuItems.map(({ title, description }) => (
+                            {menuItems.map(({title, description}) => (
                                 <a href="#" key={title}>
                                     <MenuItem className="hover:bg-transparent hover:scale-105">
                                         <Typography variant="h6" className="mb-1 text-primary">
@@ -262,8 +263,8 @@ export const Header = () => {
             <Collapse open={openNav}>
                 <div className="w-full my-4">
                     <Input label="What are you looking for?"
-                        icon={<Icon icon="akar-icons:search" className="cursor-pointer" />}
-                        onClick={(event) => handleSearch(event)} />
+                           icon={<Icon icon="akar-icons:search" className="cursor-pointer"/>}
+                           onClick={(event) => handleSearch(event)}/>
                 </div>
                 {navList}
             </Collapse>

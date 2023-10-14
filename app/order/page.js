@@ -69,10 +69,11 @@ const sortedProducts = sortProducts(sortingCriterion);
 
     return (
         <main className="lg:flex justify-between p-4 sm:block md:block">
-            <div className="w-full pr-10">
+            <div className="w-full lg:px-20">
                 <Link href="/explore">
                     <h3 className='flex text-[14px] text-primary mb-2'>
-                        <ArrowLeftIcon className="h-4 w-8  text-primary" />Continue Shopping
+                        <ArrowLeftIcon className="h-4 w-8  text-primary" />
+                        <Typography variant={"small"} className={"font-normal"}>Continue Shopping</Typography>
                     </h3>
                 </Link>
                 <Typography className="font-bolder">Shopping cart</Typography>
