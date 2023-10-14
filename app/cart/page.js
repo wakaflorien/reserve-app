@@ -1,4 +1,6 @@
+'use client'
 import { Header } from "@/components/Header";
+import { useState } from "react";
 import {
     Typography, Button, Breadcrumbs, Card,
     CardHeader,
@@ -25,23 +27,7 @@ export default function Cart() {
                     </a>
                     <a href="#" className="text-black hover:text-primary opacity-60">Your Cart</a>
                 </Breadcrumbs>
-                {/* <div className="flex flex-col items-center justify-center my-4 space-y-4">
-                    <Typography variant="lead">
-                        Your cart is empty
-                    </Typography>
-                    <Link href="/explore">
-                        <Button className="bg-primary" ripple={false}>
-                            Continue Shopping
-                        </Button>
-                    </Link>
-                    Product Name
-
-Unit Price
-
-QTY
-
-Subtotal
-                </div> */}
+                
                 <div className="flex flex-col w-full items-center justify-center space-y-8">
                     <Typography variant="lead">
                         Shopping cart
@@ -73,6 +59,7 @@ Subtotal
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
+                            <Link href="/order">
                             <Button
                                 ripple={false}
                                 fullWidth={true}
@@ -80,6 +67,7 @@ Subtotal
                             >
                                 Checkout
                             </Button>
+                            </Link>
                         </CardFooter>
                     </Card>
                 </div>
