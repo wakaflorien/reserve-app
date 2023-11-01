@@ -18,7 +18,7 @@ export default function Home() {
             <figure className="flex-1 h-full">
                 <Carousel transition={{duration: 2}} className="rounded-none"
                           autoplay={true}
-                          autoplayDelay={5000}
+                          autoplayDelay={3000}
                           loop={true}
                           navigation={({setActiveIndex, activeIndex, length}) => (
                               <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
