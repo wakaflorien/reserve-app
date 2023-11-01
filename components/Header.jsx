@@ -15,11 +15,11 @@ import {
     Navbar
 } from "@/utils/material_tailwind";
 import {Icon} from "@iconify/react";
-import {ChevronDownIcon, RocketLaunchIcon} from "@heroicons/react/solid";
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/outline";
 
-export const Header = () => {
+export function Header () {
     const [openMenu, setOpenMenu] = useState(false);
     const handleSearch = () => {
         console.log("Search value")
@@ -106,8 +106,8 @@ export const Header = () => {
             shadow={false}
             color="black"
             fullWidth={false}
-            // blurred={true}
-            className="mx-auto h-fit lg:flex-1 w-full max-w-screen-3xl rounded-none py-2 px-4 lg:px-0 lg:py-0 sticky top-0 z-40">
+            blurred={true}
+            className="mx-auto h-fit w-full max-w-screen-3xl rounded-none py-2 px-4 lg:px-0 lg:py-0 sticky top-0 z-40">
             <div className="mx-auto flex items-center justify-between text-blue-gray-900 lg:px-20 lg:py-4 ">
                 <div className="flex space-x-1">
                     <IconButton
@@ -181,16 +181,6 @@ export const Header = () => {
                                  }>
                             <Link href="/favourite">
                                 <Icon icon="tdesign:heart" color="#766957"/>
-                            </Link>
-                        </Tooltip>
-                        <Tooltip placement="bottom" className="border border-primary bg-white px-4 py-3 shadow-xl"
-                                 content={
-                                     <div className="w-fit">
-                                         <p className="font-normal text-primary">View cart</p>
-                                     </div>
-                                 }>
-                            <Link href="/cart">
-                                <Icon icon="mdi:cart-outline" color="#766957"/>
                             </Link>
                         </Tooltip>
                     </div>
