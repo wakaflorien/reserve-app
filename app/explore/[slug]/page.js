@@ -12,8 +12,7 @@ import {
 import { LoadingSpinner } from "@/components/Spinner";
 import { Wrapper } from "@/components/layout/Layout";
 import { Header } from "@/components/Header";
-import { Card, CardBody, CardFooter, CardHeader, Drawer, IconButton } from "@material-tailwind/react";
-import Link from "next/link";
+import { CartDrawer } from "@/components/CartDrawer";
 
 export default function SingleProduct() {
     const [product, setProduct] = useState(null)
@@ -47,80 +46,7 @@ export default function SingleProduct() {
     return (
         <main className="main">
             <>
-                <Drawer
-                    placement="right"
-                    open={openRight}
-                    onClose={closeDrawerRight}
-                    className="p-4"
-                >
-                    <div className="mb-6 flex items-center justify-between">
-                        <Typography variant="h5" color="blue-gray">
-                            My Cart
-                        </Typography>
-                        <IconButton
-                            variant="text"
-                            color="blue-gray"
-                            onClick={closeDrawerRight}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </IconButton>
-                    </div>
-
-                    <div className="flex gap-2">
-                        <Card className="w-96">
-                            <CardHeader shadow={false} floated={false} className="h-96">
-                                <img
-                                    src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
-                                    alt="card-image"
-                                    className="h-full w-full object-cover"
-                                />
-                            </CardHeader>
-                            <CardBody>
-                                <div className="mb-2 flex items-center justify-between">
-                                    <Typography color="blue-gray" className="font-medium">
-                                        Apple AirPods
-                                    </Typography>
-                                    <Typography color="blue-gray" className="font-medium">
-                                        $95.00
-                                    </Typography>
-                                </div>
-                                <Typography
-                                    variant="small"
-                                    color="gray"
-                                    className="font-normal opacity-75"
-                                >
-                                    With plenty of talk and listen time, voice-activated Siri access, and
-                                    an available wireless charging case.
-                                </Typography>
-                            </CardBody>
-                            <CardFooter className="pt-0">
-                                <Link href="/order">
-                                    <Button
-                                        ripple={false}
-                                        fullWidth={true}
-                                        className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-                                    >
-                                        Checkout
-                                    </Button>
-                                </Link>
-                            </CardFooter>
-                        </Card>
-                    </div>
-                </Drawer>
-
+                <CartDrawer openRight={openRight} closeDrawerRight={closeDrawerRight} cart={cart} />
                 <Header />
                 {loading ? <LoadingSpinner /> :
                     <Suspense fallback={<LoadingSpinner />}>

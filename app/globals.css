@@ -6,6 +6,9 @@
   .main {
     @apply flex flex-col h-screen min-h-screen z-0;
   }
+  .small-button{
+    @apply bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100;
+  }
 }
 *{
   margin: 0;
@@ -28,4 +31,11 @@
 body {
   color: #000;
   background: #FFFFFF;
+  overflow: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }

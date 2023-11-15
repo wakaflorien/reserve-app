@@ -17,7 +17,7 @@ import {
 import {Icon} from "@iconify/react";
 import {useEffect, useState} from "react";
 import Link from "next/link";
-import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/outline";
+import { ChevronDownIcon, FireIcon } from "@heroicons/react/outline";
 
 export function Header () {
     const [openMenu, setOpenMenu] = useState(false);
@@ -210,19 +210,9 @@ export function Header () {
                             />
                         </Button>
                     </MenuHandler>
-                    <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-                        <Card
-                            color="gray"
-                            shadow={false}
-                            variant="gradient"
-                            className="col-span-3 grid h-full w-full place-items-center rounded-md"
-                        >
-                            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28"/>
-                        </Card>
-                        <ul className="col-span-4 flex w-full flex-col gap-1">
-                            {menuItems.map(({title, description}) => (
-                                <a href="#" key={title}>
-                                    <MenuItem className="hover:bg-transparent hover:scale-105">
+                    <MenuList className="hidden lg:w-[300px] gap-4 lg:flex flex-col">
+                            {menuItems.map(({title, description}, index) => (
+                                    <MenuItem key={index} className="hover:bg-transparent hover:scale-105 border">
                                         <Typography variant="h6" className="mb-1 text-primary">
                                             {title}
                                         </Typography>
@@ -233,9 +223,7 @@ export function Header () {
                                             {description}
                                         </Typography>
                                     </MenuItem>
-                                </a>
                             ))}
-                        </ul>
                     </MenuList>
                 </Menu>
                 {navItems.map((item, index) =>
