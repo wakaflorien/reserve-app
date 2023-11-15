@@ -94,7 +94,7 @@ export default function Guest() {
                 </Typography>
                 <figure className="block">
                     {products && products.map((item, index) =>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col' key={index}>
                             <XIcon
                                 className="h-4 w-4 text-red-500 cursor-pointer self-end"
                                 onClick={() => deleteProduct(item.id)}
@@ -102,6 +102,7 @@ export default function Guest() {
                             <div className="flex border rounded-[8px] mb-4 p-2 justify-between" key={index}>
                                 <div shadow={false} floated={false} className="h-18  ">
                                     <img
+                                        loading="lazy"
                                         src={item.images[0]}
                                         alt="card-image"
                                         className="h-20 w-20 object-cover rounded-[8px]"
