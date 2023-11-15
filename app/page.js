@@ -6,6 +6,7 @@ import {
 } from "../utils/material_tailwind"
 import {Header} from "@/components/Header";
 import Link from "next/link";
+import {ExploreContent} from "@/components/ExploreContent";
 
 export const ImageLoader = ({src, width, quality}) => {
     return `https://images.unsplash.com/${src}?w=${width}&q=${quality || 75}`
@@ -18,7 +19,7 @@ export default function Home() {
             <figure className="flex-1 h-full">
                 <Carousel transition={{duration: 2}} className="rounded-none"
                           autoplay={true}
-                          autoplayDelay={3000}
+                          autoplayDelay={5000}
                           loop={true}
                           navigation={({setActiveIndex, activeIndex, length}) => (
                               <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
@@ -44,28 +45,7 @@ export default function Home() {
                             fill={true}
                             className="object-cover"
                         />
-                        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-                            <div className="w-full text-center md:w-2/4 space-y-8">
-                                <p className="text-white text-base lg:text-xl px-2">
-                                    Welcome to UNIQUR! We&apos;re your partners in making small gatherings
-                                    extraordinary. From delightful birthdays to heartwarming family get-togethers,
-                                    charming
-                                    bridal showers, and adorable baby showers, we specialize in crafting unforgettable
-                                    moments for events of up to 30 people. Let&apos;s turn your intimate events into
-                                    unforgettable memories!
-                                </p>
-                                <div className="flex justify-center gap-2">
-                                    <Link href="/explore">
-                                        <Button size="lg" color="white">
-                                            Explore
-                                        </Button>
-                                    </Link>
-                                    <Button size="lg" color="white" variant="text">
-                                        Gallery
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
+                        <ExploreContent />
                     </div>
                     <div className="relative h-full w-full">
                         <Image
@@ -76,6 +56,7 @@ export default function Home() {
                             height={500}
                             className="h-full w-full object-cover"
                         />
+                        <ExploreContent />
                     </div>
                     <div className="relative h-full w-full">
                         <Image
@@ -86,6 +67,7 @@ export default function Home() {
                             height={500}
                             className="h-full w-full object-cover"
                         />
+                        <ExploreContent />
                     </div>
                 </Carousel>
             </figure>

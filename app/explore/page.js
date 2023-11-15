@@ -59,24 +59,29 @@ export default function Explore() {
                                         className={`flex flex-col border p-2 lg:p-8 text-[#475569] gap-2 lg:gap-4 rounded-md animate-fade-up`}
                                     >
                                         {item.images[0] && <Image src={item.images[0]} alt="image" width={200} height={200} className="w-full h-full lg:h-[300px] object-cover" />}
-                                        {item.title && (
-                                            <h1 className="text-lg xl:text-2xl font-bold opacity-80">
-                                                {item.title}
-                                            </h1>
-                                        )}
-                                        {item.price && (
-                                            <h1 className="text-lg xl:text-base font-bold opacity-80">
-                                                {item.price} Rwf
-                                            </h1>
-                                        )}
+                                        <div className="flex justify-between">
+                                            {item.title && (
+                                                <Typography color="blue-gray" className="font-medium">
+                                                    {item.title}
+                                                </Typography>
 
-                                        <p className={`text-[#4755699f] flex-grow text-md xl:text-lg ${item.default && "text-white"}`}>
+                                            )}
+                                            {item.price && (
+                                                <Typography color="blue-gray" className="font-medium">
+                                                    {item.price} Rwf
+                                                </Typography>
+                                            )}
+                                        </div>
+                                        <Typography
+                                            variant="small"
+                                            color="gray"
+                                            className={`flex-grow font-normal opacity-75 ${item.default && "text-white"}`}>
                                             {item.description}
-                                        </p>
+                                        </Typography>
                                         <Button
                                             ripple={false}
                                             fullWidth={true}
-                                            className="bg-primary text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 normal-case font-normal"
+                                            className="bg-primary w-fit small-button"
                                             onClick={() => {
                                                 router.push(`/explore/id=${item.id}`)
                                             }}
@@ -91,7 +96,7 @@ export default function Explore() {
                             // variant="solid" 
                             ripple={false}
                             onClick={() => finish === 3 ? setFinish(products?.length) : setFinish(3)}
-                            className="w-fit bg-primary self-center my-8 normal-case font-normal" >{finish === 3 ? "Load more" : "Load less"}</Button>
+                            className="self-center small-button" >{finish === 3 ? "Load more" : "Load less"}</Button>
                         <br />
                     </Suspense>
                 }
